@@ -1,0 +1,29 @@
+.title {
+  padding: 0 0.4rem;
+  font-size: 0.4rem;
+  line-height: 0.4rem;
+}
+
+.pageColor {
+  background: #0ab2fd;
+}
+
+.page {
+  margin: 0.1rem;
+  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+}
+
+.page_header {
+  margin: 0.1rem;
+  padding: 1rem 0.1rem 0.1rem 0.1rem;
+}
+
+.page_footer {
+  margin: 0.1rem;
+  padding: 0.1rem 0.1rem 1rem 0.1rem;
+}
+
+.page_footer_header {
+  margin: 0.1rem;
+  padding: 1rem 0.1rem 1rem 0.1rem;
+}

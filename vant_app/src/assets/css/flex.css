@@ -1,0 +1,54 @@
+.df {
+  /*弹性布局*/
+  display: flex;
+}
+
+.df_jc {
+  display: flex;
+  justify-content: center;
+}
+
+.df_jr {
+  display: flex;
+  justify-content: right;
+}
+
+.df_jl {
+  display: flex;
+  justify-content: left;
+}
+
+.df_ac_jc {
+  display: flex;
+  /*弹性容器内垂直居中对齐*/
+  align-items: center;
+  /*弹性容器内水平居中对齐*/
+  justify-content: center;
+}
+
+.df_ac {
+  display: flex;
+  align-items: center;
+}
+
+.f1 {
+  /*让所有弹性盒模型对象的子元素都有相同的长度，且忽略它们内部的内容*/
+  flex: 1;
+}
+
+.f2 {
+  flex: 2;
+}
+
+.f3 {
+  flex: 3;
+}
+
+.df_wp {
+  /*拆行或拆列*/
+  flex-wrap: wrap;
+}
+
+.fed {
+  justify-content: flex-end;
+}
