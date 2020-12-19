@@ -1,4 +1,4 @@
-![(logo)](https://github.com/niyongsheng/vant_app/blob/master/logo.png?raw=true)
+![(logo)](https://github.com/niyongsheng/vant_app/blob/master/logo.png)
 vant_app
 ===
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/niyongsheng/vant_app/blob/master/LICENSE)
@@ -17,7 +17,7 @@ vant_app
 - [x] vconsole
 
 ## Screenshot：
-<img src="https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/vant_app_screenshot.jpg" style="width: 200px; height: 400px"></img>
+<img src="https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/vant_app_screenshot.jpg" style="width: 100px; height: 200px"></img>
 ## Usage：
 ```node
 npm install
