@@ -8,6 +8,8 @@ vant_app
 > 一个基于Vant框架的Vue APP项目模板<br>
 > A base on vant project template.
 
+https://niyongsheng.github.io/vant_app/index.html
+
 ## Features:
 - [x] Vant
 - [x] Vuex
