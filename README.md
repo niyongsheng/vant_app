@@ -1,28 +1,29 @@
-![(logo)](https://github.com/niyongsheng/vant_app/blob/master/logo.png)
+![(logo)](https://github.com/niyongsheng/vant_app/blob/main/logo.png?raw=true)
 vant_app
 ===
 [![](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/niyongsheng/vant_app/blob/master/LICENSE)
 ===
 
 ## Introduction:
-> 一个基于Vant框架的APP项目模板<br>
+> 一个基于Vant框架的Vue APP项目模板<br>
 > A base on vant project template.
 
 ## Features:
-- [x] Vue
 - [x] Vant
 - [x] Vuex
-- [x] Router
+- [x] VueRouter
 - [x] Axios
+- [x] Scss
 - [x] vconsole
 
 ## Screenshot：
-<img src="https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/vant_app_screenshot.jpg" style="width: 100px; height: 200px"></img>
+![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/vant_app_screenshot.git)
+
 ## Usage：
 ```node
 npm install
 
-npm run
+npm run dev
 ```
 
 ## Remind

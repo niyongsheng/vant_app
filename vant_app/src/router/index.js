@@ -12,20 +12,7 @@ Vue.use(VueRouter)
 // 点击回退
 Vue.prototype.backSpace = () => router.back(-1)
 
-// 自动扫描 modules 里面的路由模块，路由模块请根据业务自行拆分
-const files = require.context('@/router/modules', false, /\.js$/)
-
 const routes = []
-// 获取所有的路由内容
-files.keys().forEach(key => {
-  const file = files(key).default
-  // 根据导出的内容判断是否数组，如果数组需使用扩展运算符
-  if (Array.isArray(file)) {
-    routes.push(...file)
-  } else {
-    routes.push(file)
-  }
-})
 
 routes.push(
   ...[
@@ -48,6 +35,39 @@ routes.push(
         title: 'Me',
         headerHidden: false,
         footShow: true,
+        keepAlive: false
+      }
+    },
+    {
+      path: '/loadMore',
+      name: 'loadMore',
+      component: () => import('@/components/me/loadMore'),
+      meta: {
+        title: 'loadMore',
+        headerHidden: false,
+        footShow: false,
+        keepAlive: false
+      }
+    },
+    {
+      path: '/redPackList',
+      name: 'redPackList',
+      component: () => import('@/components/me/redPackList'),
+      meta: {
+        title: 'redPackList',
+        headerHidden: false,
+        footShow: false,
+        keepAlive: false
+      }
+    },
+    {
+      path: '/luckywheel',
+      name: 'luckywheel',
+      component: () => import('@/components/me/luckywheel'),
+      meta: {
+        title: 'luckywheel',
+        headerHidden: false,
+        footShow: false,
         keepAlive: false
       }
     },

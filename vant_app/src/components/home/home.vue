@@ -13,17 +13,8 @@
       <van-notice-bar class="noti"
                       scrollable
                       left-icon="volume-o"
-                      text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"
+                      text="You build it, You run it. —— Werner Vogels"
       />
-
-      <div>
-        <van-circle v-model="currentRate" color="#FF5048" :rate="60" :stroke-width="50" :clockwise="false"
-                    :text="text"/>
-        <van-circle v-model="currentRate" color="#FFCA39" :rate="30" :stroke-width="50" :clockwise="false"
-                    :text="text"/>
-        <van-circle v-model="currentRate" color="#49BA26" :rate="80" :stroke-width="50" :clockwise="false"
-                    :text="text"/>
-      </div>
 
       <van-tabs v-model="active">
         <van-tab title="标签 1">
@@ -40,14 +31,6 @@
         </van-tab>
       </van-tabs>
 
-      <div class="df_ac_jc">
-        <van-button type="primary">主要按钮</van-button>
-        <van-button type="info">信息按钮</van-button>
-        <van-button type="default">默认按钮</van-button>
-        <van-button type="warning">警告按钮</van-button>
-        <van-button type="danger">危险按钮</van-button>
-      </div>
-
       <van-steps direction="vertical" :active="0">
         <van-step>
           <h3>【城市】物流状态1</h3>
@@ -63,10 +46,16 @@
         </van-step>
       </van-steps>
 
+      <div class="df_ab">
+        <van-button class="btn_custom" type="danger" @click="showNotify('warning')">危险按钮</van-button>
+        <van-button class="btn_custom" type="warning" @click="showNotify('danger')">警告按钮</van-button>
+        <van-button class="btn_custom" type="primary" @click="showNotify('success')">主要按钮</van-button>
+      </div>
+
       <van-divider
         :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 7px', fontSize: '12px' }"
       >
-        我们是有底线的
+        底线
       </van-divider>
 
     </div>
@@ -75,7 +64,7 @@
 </template>
 
 <script>
-import { Button, NavBar, Swipe, SwipeItem, NoticeBar, Circle, Tab, Tabs, Empty, Divider, Steps, Step } from 'vant'
+import {Button, NavBar, Swipe, SwipeItem, NoticeBar, Tab, Tabs, Empty, Divider, Steps, Step, Notify} from 'vant'
 
 export default {
   name: 'home',
@@ -84,14 +73,14 @@ export default {
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
     [NoticeBar.name]: NoticeBar,
-    [Circle.name]: Circle,
     [Tabs.name]: Tabs,
     [Tab.name]: Tab,
     [Empty.name]: Empty,
     [Divider.name]: Divider,
     [Steps.name]: Steps,
     [Step.name]: Step,
-    [NavBar.name]: NavBar
+    [NavBar.name]: NavBar,
+    [Notify.Component.name]: Notify.Component
   },
   data () {
     return {
@@ -99,7 +88,6 @@ export default {
         'https://img.yzcdn.cn/vant/apple-1.jpg',
         'https://img.yzcdn.cn/vant/apple-2.jpg'
       ],
-      currentRate: 0,
       active: 0,
       query: {}
     }
@@ -115,7 +103,11 @@ export default {
   mounted () {
     this.query = this.$route.query
   },
-  methods: {}
+  methods: {
+    showNotify (type) {
+      Notify({ type: type, message: '通知内容' })
+    }
+  }
 }
 </script>
 
@@ -135,5 +127,10 @@ export default {
 
 .noti {
   margin: 0.2rem;
+}
+
+.btn_custom {
+  margin: 0.1rem;
+  border-radius: 0.1rem;
 }
 </style>

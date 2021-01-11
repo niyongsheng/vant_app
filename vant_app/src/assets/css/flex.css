@@ -31,6 +31,16 @@
   align-items: center;
 }
 
+.df_jb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.df_ab {
+  display: flex;
+  justify-content: space-around;
+}
+
 .f1 {
   /*让所有弹性盒模型对象的子元素都有相同的长度，且忽略它们内部的内容*/
   flex: 1;

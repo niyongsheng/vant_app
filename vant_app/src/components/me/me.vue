@@ -1,87 +1,119 @@
 <template>
   <div>
-    <van-nav-bar class="navigation" title="Home">
-      <template #right>
-        <van-icon name="search" size="18"/>
-      </template>
-    </van-nav-bar>
+    <div class="page_footer_header">
+      <van-nav-bar class="navigation" title="Me">
+        <template #right>
+          <van-icon name="search" size="18"/>
+        </template>
+      </van-nav-bar>
 
-    <van-list
-      v-model="loading"
-      :finished="finished"
-      finished-text="没有更多了"
-      @load="onLoad"
-    >
-      <van-cell v-for="item in list" :key="item" :title="item">
-        <van-rate v-model="value"/>
-      </van-cell>
-    </van-list>
-    <van-skeleton title :row="3" :loading="loading"/>
-    <van-skeleton title :row="3" :loading="loading"/>
-    <van-skeleton title :row="3" :loading="loading"/>
-    <van-skeleton title :row="3" :loading="loading"/>
-    <van-skeleton title :row="3" :loading="loading">
-    </van-skeleton>
+      <van-grid :border="false" :column-num="3">
+        <van-grid-item>
+          <van-image src="https://img.yzcdn.cn/vant/apple-1.jpg"/>
+        </van-grid-item>
+        <van-grid-item>
+          <van-image src="https://img.yzcdn.cn/vant/apple-2.jpg"/>
+        </van-grid-item>
+        <van-grid-item>
+          <van-image src="https://img.yzcdn.cn/vant/apple-3.jpg"/>
+        </van-grid-item>
+      </van-grid>
+
+      <van-grid :column-num="2" class="main_item">
+        <van-grid-item @click="toRedPack" icon="gem-o" text="红包雨" dot/>
+        <van-grid-item @click="toLuckywheel" icon="gift-o" text="大转盘" badge="99+"/>
+      </van-grid>
+
+      <div v-show="isShowCircle">
+        <van-circle v-model="currentRate" color="#FF5048" :rate="60" :stroke-width="50" :clockwise="false"
+                    :text="text"/>
+        <van-circle v-model="currentRate" color="#FFCA39" :rate="30" :stroke-width="50" :clockwise="false"
+                    :text="text"/>
+        <van-circle v-model="currentRate" color="#49BA26" :rate="80" :stroke-width="50" :clockwise="false"
+                    :text="text"/>
+      </div>
+
+      <div class="ta">
+        <van-cell-group title="Test">
+          <van-cell title="列表" value="内容" @click="toLoadMore"/>
+          <van-cell title="进度环" value="内容" label="描述信息" @click="isShowCircle = true"/>
+        </van-cell-group>
+
+        <van-cell title="单元格" icon="location-o" is-link/>
+        <van-cell title="单元格" icon="location-o" is-link/>
+        <van-cell title="单元格" icon="location-o" is-link/>
+        <van-cell title="单元格" icon="location-o" is-link/>
+
+        <van-cell-group title="插槽">
+          <van-cell value="内容" is-link>
+            <template #title>
+              <span class="custom-title">单元格</span>
+              <van-tag type="danger">标签</van-tag>
+            </template>
+          </van-cell>
+
+          <van-cell title="单元格" icon="shop-o">
+            <template #right-icon>
+              <van-icon name="search" class="search-icon"/>
+            </template>
+          </van-cell>
+        </van-cell-group>
+      </div>
+
+    </div>
   </div>
 </template>
 
 <script>
-import {get} from '@/assets/js/request'
-import {Button, NavBar, Icon, List, Cell, Rate, Skeleton} from 'vant'
+import {NavBar, Icon, Grid, GridItem, Image, Circle, Cell, CellGroup, Tag} from 'vant'
 
 export default {
   name: 'me',
   components: {
-    [Skeleton.name]: Skeleton,
-    [Button.name]: Button,
     [NavBar.name]: NavBar,
-    [List.name]: List,
+    [Icon.name]: Icon,
+    [Grid.name]: Grid,
+    [GridItem.name]: GridItem,
+    [Image.name]: Image,
+    [Circle.name]: Circle,
     [Cell.name]: Cell,
-    [Rate.name]: Rate,
-    [Icon.name]: Icon
+    [CellGroup.name]: CellGroup,
+    [Tag.name]: Tag
   },
   props: {},
   data () {
     return {
       list: [],
       skeleton: true,
-      loading: false,
+      isShowCircle: false,
       finished: false,
-      value: Math.random() * 5
+      currentRate: 0
     }
   },
-  computed: {},
+  computed: {
+    text () {
+      return this.currentRate.toFixed(0) + '%'
+    }
+  },
   watch: {},
-  created () {
-  },
+  created () {},
   mounted () {
-    let params = {
-      a: 'getPortalList',
-      catid: 20,
-      page: 1
-    }
-    get('/music', params).then((data) => {
-      console.log(data)
-    })
   },
   methods: {
-    onLoad () {
-      // 异步更新数据
-      // setTimeout 仅做示例，真实场景中一般为 ajax 请求
-      setTimeout(() => {
-        for (let i = 0; i < 10; i++) {
-          this.list.push(this.list.length + 1)
-        }
-
-        // 加载状态结束
-        this.loading = false
-
-        if (this.list.length >= 100) {
-          // 数据全部加载完成
-          this.finished = true
-          this.skeleton = false
-        }
-      }, 1000)
+    toRedPack () {
+      this.$router.push({
+        path: '/redPackList'
+      })
+    },
+    toLuckywheel () {
+      this.$router.push({
+        path: '/luckywheel'
+      })
+    },
+    toLoadMore () {
+      this.$router.push({
+        path: '/loadMore'
+      })
     }
   }
 }
@@ -94,4 +126,13 @@ export default {
   z-index: 9999;
   top: 0;
 }
+
+.main_item {
+  margin: 0.2rem 0;
+}
+
+.ta {
+  text-align: left;
+}
+
 </style>
