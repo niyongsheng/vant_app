@@ -17,7 +17,7 @@ vant_app
 - [x] vconsole
 
 ## Screenshot：
-![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/vant_app_screenshot.git)
+![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/vant_app_screenshot.gif?raw=true)
 
 ## Usage：
 ```node
