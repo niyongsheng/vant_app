@@ -21,15 +21,24 @@ https://niyongsheng.github.io/vant_app/index.html
 ## Screenshot：
 ![image](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Document/vant_app_screenshot.gif?raw=true)
 
+## Browser support
+| [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/safari-ios.png" alt="iOS Safari" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>iOS | [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/chrome-android.png" alt="Chrome for Android" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>Android |
+|:---------:|:---------:|
+| &check; | &check;
+
 ## Usage：
 ```node
-npm install
+yarn install
 
-npm run dev
+yarn serve
+
+yarn build
 ```
 
 ## Remind
- `vue.js 2.0+`<br>
+`vue 2.6+ `<br/>
+`vue-cli 3.x`<br/>
+`web storm 2020.3`
 
 ## Contribution
 Reward[:lollipop:](https://github.com/niyongsheng/niyongsheng.github.io/blob/master/Beg/README.md)  Encourage[:heart:](https://github.com/niyongsheng/vant_app/stargazers)

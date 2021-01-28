@@ -1,11 +1,12 @@
 <template>
   <div>
+    <van-nav-bar class="navigation" title="Me">
+      <template #right>
+        <van-icon name="search" size="18"/>
+      </template>
+    </van-nav-bar>
+
     <div class="page_footer_header">
-      <van-nav-bar class="navigation" title="Me">
-        <template #right>
-          <van-icon name="search" size="18"/>
-        </template>
-      </van-nav-bar>
 
       <van-grid :border="false" :column-num="3">
         <van-grid-item>
