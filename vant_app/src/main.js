@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import { Lazyload } from 'vant'
 
 // css
 import '@/assets/css/global.scss'
@@ -12,6 +13,7 @@ import '@/assets/js/config.js'
 import '@/assets/js/utils.js'
 import '@/assets/js/api.js'
 
+Vue.use(Lazyload)
 Vue.config.productionTip = false
 
 // 开发环境下自动启用vConsole调试

@@ -19,7 +19,7 @@ export default {
     }
   },
   mounted () {
-    window.addEventListener('unload', this.saveState)
+    // window.addEventListener('unload', this.saveState)
   },
   computed: {
   }

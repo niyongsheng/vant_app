@@ -7,7 +7,7 @@ module.exports = {
         open: false,
         proxy: {
             "/api": {
-                target: "http://localhost:7001/",
+                target: "http://www.phonegap100.com/appapi.php",
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': 'api'

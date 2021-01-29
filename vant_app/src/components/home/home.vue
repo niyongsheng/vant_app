@@ -1,6 +1,10 @@
 <template>
   <div>
-    <van-nav-bar title="Home" right-text="按钮"/>
+    <van-nav-bar title="Home" >
+      <template #right>
+        <van-icon name="search" size="18"/>
+      </template>
+    </van-nav-bar>
 
     <div class="page_footer">
 
@@ -53,9 +57,9 @@
       </div>
 
       <van-divider
-        :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 7px', fontSize: '12px' }"
+          :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 7px', fontSize: '12px' }"
       >
-        底线
+        © {{ date.getFullYear() }} NYS
       </van-divider>
 
     </div>
@@ -64,11 +68,12 @@
 </template>
 
 <script>
-import {Button, NavBar, Swipe, SwipeItem, NoticeBar, Tab, Tabs, Empty, Divider, Steps, Step, Notify} from 'vant'
+import {Button, NavBar, Icon, Swipe, SwipeItem, NoticeBar, Tab, Tabs, Empty, Divider, Steps, Step, Notify} from 'vant'
 
 export default {
   name: 'home',
   components: {
+    [Icon.name]: Icon,
     [Button.name]: Button,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
@@ -82,30 +87,31 @@ export default {
     [NavBar.name]: NavBar,
     [Notify.Component.name]: Notify.Component
   },
-  data () {
+  data() {
     return {
       images: [
         'https://img.yzcdn.cn/vant/apple-1.jpg',
         'https://img.yzcdn.cn/vant/apple-2.jpg'
       ],
       active: 0,
+      date: new Date(),
       query: {}
     }
   },
   computed: {
-    text () {
+    text() {
       return this.currentRate.toFixed(0) + '%'
     }
   },
   watch: {},
-  created () {
+  created() {
   },
-  mounted () {
+  mounted() {
     this.query = this.$route.query
   },
   methods: {
-    showNotify (type) {
-      Notify({ type: type, message: '通知内容' })
+    showNotify(type) {
+      Notify({type: type, message: '通知内容'})
     }
   }
 }
